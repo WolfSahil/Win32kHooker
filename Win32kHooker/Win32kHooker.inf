@@ -1,0 +1,62 @@
+;
+; Win32kHooker.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = Win32kHooker.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+Win32kHooker.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%Win32kHooker.DeviceDesc% = Win32kHooker_Device, Root\Win32kHooker ; TODO: edit hw-id
+
+[Win32kHooker_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+Win32kHooker.sys
+
+;-------------- Service installation
+[Win32kHooker_Device.NT.Services]
+AddService = Win32kHooker,%SPSVCINST_ASSOCSERVICE%, Win32kHooker_Service_Inst
+
+; -------------- Win32kHooker driver install sections
+[Win32kHooker_Service_Inst]
+DisplayName    = %Win32kHooker.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\Win32kHooker.sys
+
+[Win32kHooker_Device.NT.Wdf]
+KmdfService = Win32kHooker, Win32kHooker_wdfsect
+
+[Win32kHooker_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "Win32kHooker Installation Disk"
+Win32kHooker.DeviceDesc = "Win32kHooker Device"
+Win32kHooker.SVCDESC = "Win32kHooker Service"
